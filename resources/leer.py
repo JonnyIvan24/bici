@@ -30,4 +30,4 @@ with puerto:
             continue
         # .decode('ascci') quita el b'' al principio de cada linea
         parametros = valores(line.decode('ascii'))
-        req = requests.post('http://localhost/bici/guardar.php', data=parametros)
+        req = requests.post('http://148.202.89.11/bici/guardar.php', data=parametros)
