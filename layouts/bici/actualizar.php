@@ -7,15 +7,16 @@ $bicis = $data->fetchAll();
 $bici = '';
 foreach ($bicis as $b){
     $bici = $b;
+    break;
 }
 
-$title = 'Agregar';
+$title = 'Editar bici '.$bici['id'];
 include '../base/header/header.php';
 ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="../../index.php">Inicio</a></li>
-        <li class="breadcrumb-item active">Agregar</li>
+        <li class="breadcrumb-item active">Editar</li>
     </ol>
 </nav>
     <h1>Bicicletas</h1><br>
