@@ -21,7 +21,7 @@ include 'layouts/base/header/header.php';
             <tr>
                 <th>Bicicleta</th>
                 <th>Distancia</th>
-                <th>Distancia</th>
+                <th>Velocidad</th>
                 <th class="text-right" colspan="10%">Acciones</th>
             </tr>
             </thead>
