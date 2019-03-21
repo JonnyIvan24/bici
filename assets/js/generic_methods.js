@@ -18,8 +18,8 @@ function updateTable() {
         .then( data => {
             if (data.length === numBicis.length){
                 $.each(data, function (index, element) {
-                    $('#dist'+element.id).text(element.dist_tot);
-                    $('#vel'+element.id).text(element.velocidad);
+                    $('#dist'+element.id).text(parseFloat(element.dist_tot).toFixed(2)+ ' m');
+                    $('#vel'+element.id).text(((element.velocidad/15)/3.6**2).toFixed(2)+ ' Km/h');
                 });
             }else {
                 alert('Se desincronizó la actualización, se volvera a refrescar la página');
@@ -29,7 +29,7 @@ function updateTable() {
         .catch( console.error);
 }
 
-function bicis(){
+function bicis(string){
     let url = localhost+'resources/bici/indexJSON.php';
     fetch(url, {
         headers:{
@@ -41,8 +41,8 @@ function bicis(){
             $.each(data, function (index, elemnt) {
                 html = "<tr>"+
                     '<td>'+elemnt.id+'</td>'+
-                    '<td id="dist'+elemnt.id+'">'+elemnt.dist_tot+'</td>'+
-                    '<td id="vel'+elemnt.id+'">'+elemnt.velocidad+'</td>'+
+                    '<td id="dist'+elemnt.id+'">'+parseFloat(elemnt.dist_tot).toFixed(2)+' m</td>'+
+                    '<td id="vel'+elemnt.id+'">'+(((elemnt.velocidad/15)/3.6**2).toFixed(2))+' Km/h</td>'+
                     '<td colspan="10%">'+
                     '<ul class="nav nav-pills justify-content-end">'+
                     '<li class="nav-item dropdown">'+
