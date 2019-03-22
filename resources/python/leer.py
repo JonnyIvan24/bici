@@ -82,6 +82,6 @@ while True:
         puerto = serial.Serial(serial_com, baudrate=9600, timeout=1)
         leerPuerto(puerto)
     except serial.serialutil.SerialException as e:
-        print("Error: " + str(e))
+        print("No hay bicicleta conectada")
     finally:
         time.sleep(1)
